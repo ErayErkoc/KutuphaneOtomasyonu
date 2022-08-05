@@ -15,6 +15,20 @@ namespace KutuphaneOtomasyonu
         public Form1()
         {
             InitializeComponent();
+            
+        }
+
+        private void KullanıcıGirişBTN_Click(object sender, EventArgs e)
+        {
+            string GelenAd = KullanıcıAdtxt.Text;
+            string GelenŞifre = Şifretxt.Text;
+
+            if (GelenAd == ("ADMIN") && GelenŞifre == ("123"))
+            {
+                MessageBox.Show("Giriş Başarılı");
+            }
+            else
+                MessageBox.Show("Kullanıcı Adı veya Şifre Hatalı");
         }
     }
 }
