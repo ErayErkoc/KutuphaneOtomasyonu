@@ -64,6 +64,12 @@
     <Compile Include="Kullanıcılar.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Kullanıcı\Okuyucu Düzenle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Kullanıcı\Okuyucu Düzenle.Designer.cs">
+      <DependentUpon>Okuyucu Düzenle.cs</DependentUpon>
+    </Compile>
     <Compile Include="Kullanıcı\Okuyucu Ekle.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -110,6 +116,9 @@
     </Compile>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Kullanıcı\Okuyucu Düzenle.resx">
+      <DependentUpon>Okuyucu Düzenle.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Kullanıcı\Okuyucu Ekle.resx">
       <DependentUpon>Okuyucu Ekle.cs</DependentUpon>

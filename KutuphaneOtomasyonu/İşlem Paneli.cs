@@ -59,5 +59,12 @@ namespace KutuphaneOtomasyonu
             SilForm.MdiParent = this;
             SilForm.Show();
         }
+
+        private void ProfilDüzenleBtn_Click(object sender, EventArgs e)
+        {
+            Okuyucu_Düzenle DüzenleForm = new Okuyucu_Düzenle();
+            DüzenleForm.MdiParent = this;
+            DüzenleForm.Show();
+        }
     }
 }

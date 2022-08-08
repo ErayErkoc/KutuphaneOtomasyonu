@@ -63,7 +63,7 @@ namespace KutuphaneOtomasyonu
             this.KullanıcıSilBtn.Name = "KullanıcıSilBtn";
             this.KullanıcıSilBtn.Size = new System.Drawing.Size(234, 60);
             this.KullanıcıSilBtn.TabIndex = 4;
-            this.KullanıcıSilBtn.Text = "Kullanıcı Sil";
+            this.KullanıcıSilBtn.Text = "Okuyucu Sil";
             this.KullanıcıSilBtn.UseVisualStyleBackColor = true;
             this.KullanıcıSilBtn.Click += new System.EventHandler(this.KullanıcıSilBtn_Click);
             // 
@@ -79,8 +79,9 @@ namespace KutuphaneOtomasyonu
             this.ProfilDüzenleBtn.Name = "ProfilDüzenleBtn";
             this.ProfilDüzenleBtn.Size = new System.Drawing.Size(234, 60);
             this.ProfilDüzenleBtn.TabIndex = 3;
-            this.ProfilDüzenleBtn.Text = "Profili Düzenle";
+            this.ProfilDüzenleBtn.Text = "           Okuyucu Düzenle";
             this.ProfilDüzenleBtn.UseVisualStyleBackColor = true;
+            this.ProfilDüzenleBtn.Click += new System.EventHandler(this.ProfilDüzenleBtn_Click);
             // 
             // KullaniciEkleBtn
             // 
@@ -94,7 +95,7 @@ namespace KutuphaneOtomasyonu
             this.KullaniciEkleBtn.Name = "KullaniciEkleBtn";
             this.KullaniciEkleBtn.Size = new System.Drawing.Size(234, 60);
             this.KullaniciEkleBtn.TabIndex = 2;
-            this.KullaniciEkleBtn.Text = "Kullanıcı Ekle";
+            this.KullaniciEkleBtn.Text = "   Okuyucu Ekle";
             this.KullaniciEkleBtn.UseVisualStyleBackColor = true;
             this.KullaniciEkleBtn.Click += new System.EventHandler(this.KullaniciEkleBtn_Click);
             // 
