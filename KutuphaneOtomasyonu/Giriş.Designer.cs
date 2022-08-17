@@ -1,7 +1,7 @@
 ﻿
 namespace KutuphaneOtomasyonu
 {
-    partial class Form1
+    partial class Giriş
     {
         /// <summary>
         ///Gerekli tasarımcı değişkeni.
@@ -29,7 +29,7 @@ namespace KutuphaneOtomasyonu
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Giriş));
             this.label1 = new System.Windows.Forms.Label();
             this.Şifretxt = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();

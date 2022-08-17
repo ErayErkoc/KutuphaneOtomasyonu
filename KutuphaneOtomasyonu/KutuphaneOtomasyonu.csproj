@@ -55,11 +55,38 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="Giriş.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Giriş.Designer.cs">
+      <DependentUpon>Giriş.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Kaynaklar.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Kitap\Kitap Düzenle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Kitap\Kitap Düzenle.Designer.cs">
+      <DependentUpon>Kitap Düzenle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Kitap\Kitap Ekle.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Kitap\Kitap Ekle.Designer.cs">
+      <DependentUpon>Kitap Ekle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Kitap\Kitap Liste.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Kitap\Kitap Liste.Designer.cs">
+      <DependentUpon>Kitap Liste.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Kitap\Kitap Sil.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Kitap\Kitap Sil.Designer.cs">
+      <DependentUpon>Kitap Sil.cs</DependentUpon>
     </Compile>
     <Compile Include="Kullanıcılar.cs">
       <DependentUpon>Model1.tt</DependentUpon>
@@ -114,8 +141,20 @@
     <Compile Include="İşlem Paneli.Designer.cs">
       <DependentUpon>İşlem Paneli.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="Giriş.resx">
+      <DependentUpon>Giriş.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Kitap\Kitap Düzenle.resx">
+      <DependentUpon>Kitap Düzenle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Kitap\Kitap Ekle.resx">
+      <DependentUpon>Kitap Ekle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Kitap\Kitap Liste.resx">
+      <DependentUpon>Kitap Liste.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Kitap\Kitap Sil.resx">
+      <DependentUpon>Kitap Sil.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Kullanıcı\Okuyucu Düzenle.resx">
       <DependentUpon>Okuyucu Düzenle.cs</DependentUpon>

@@ -5,6 +5,17 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
     <Schema Namespace="Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Kaynaklar">
+          <Key>
+            <PropertyRef Name="KitapId" />
+          </Key>
+          <Property Name="KitapId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="KitapAd" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="KitapYazar" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="KitapTür" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="KitapYayınevi" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="KitapSayfaSayısı" Type="int" />
+        </EntityType>
         <EntityType Name="Kullanıcılar">
           <Key>
             <PropertyRef Name="Id" />
@@ -25,14 +36,87 @@
           <Property Name="OkuyucuId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="OkuyucuAd" Type="nvarchar" MaxLength="20" Nullable="false" />
           <Property Name="OkuyucuSoyad" Type="nvarchar" MaxLength="20" Nullable="false" />
-          <Property Name="OkuyucuTC" Type="nvarchar" MaxLength="11" Nullable="false" />
+          <Property Name="OkuyucuKod" Type="nvarchar" MaxLength="11" Nullable="false" />
           <Property Name="OkuyucuMail" Type="nvarchar" MaxLength="30" Nullable="false" />
           <Property Name="OkuyucuTelefon" Type="nvarchar" MaxLength="10" Nullable="false" />
           <Property Name="OkuyucuCinsiyet" Type="nvarchar" MaxLength="10" />
         </EntityType>
+        <EntityType Name="ÖdünçKitaplar">
+          <Key>
+            <PropertyRef Name="ÖdünçId" />
+          </Key>
+          <Property Name="ÖdünçId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="AlanOkuyucuId" Type="int" Nullable="false" />
+          <Property Name="VerenOkuyucuId" Type="int" Nullable="false" />
+          <Property Name="KitapId" Type="int" Nullable="false" />
+          <Property Name="AlışTarihi" Type="datetime" Nullable="false" />
+          <Property Name="VerişTarihi" Type="datetime" />
+          <Property Name="GeriVerildiMi" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <Association Name="FK_ÖdünçKitaplar_Kaynaklar">
+          <End Role="Kaynaklar" Type="Self.Kaynaklar" Multiplicity="1" />
+          <End Role="ÖdünçKitaplar" Type="Self.ÖdünçKitaplar" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Kaynaklar">
+              <PropertyRef Name="KitapId" />
+            </Principal>
+            <Dependent Role="ÖdünçKitaplar">
+              <PropertyRef Name="KitapId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ÖdünçKitaplar_Okuyucular">
+          <End Role="Okuyucular" Type="Self.Okuyucular" Multiplicity="1" />
+          <End Role="ÖdünçKitaplar" Type="Self.ÖdünçKitaplar" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Okuyucular">
+              <PropertyRef Name="OkuyucuId" />
+            </Principal>
+            <Dependent Role="ÖdünçKitaplar">
+              <PropertyRef Name="AlanOkuyucuId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ÖdünçKitaplar_Okuyucular1">
+          <End Role="Okuyucular" Type="Self.Okuyucular" Multiplicity="1" />
+          <End Role="ÖdünçKitaplar" Type="Self.ÖdünçKitaplar" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Okuyucular">
+              <PropertyRef Name="OkuyucuId" />
+            </Principal>
+            <Dependent Role="ÖdünçKitaplar">
+              <PropertyRef Name="VerenOkuyucuId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <EntityContainer Name="ModelStoreContainer">
+          <EntitySet Name="Kaynaklar" EntityType="Self.Kaynaklar" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Kullanıcılar" EntityType="Self.Kullanıcılar" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Okuyucular" EntityType="Self.Okuyucular" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ÖdünçKitaplar" EntityType="Self.ÖdünçKitaplar" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_ÖdünçKitaplar_Kaynaklar" Association="Self.FK_ÖdünçKitaplar_Kaynaklar">
+            <End Role="Kaynaklar" EntitySet="Kaynaklar" />
+            <End Role="ÖdünçKitaplar" EntitySet="ÖdünçKitaplar" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ÖdünçKitaplar_Okuyucular" Association="Self.FK_ÖdünçKitaplar_Okuyucular">
+            <End Role="Okuyucular" EntitySet="Okuyucular" />
+            <End Role="ÖdünçKitaplar" EntitySet="ÖdünçKitaplar" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ÖdünçKitaplar_Okuyucular1" Association="Self.FK_ÖdünçKitaplar_Okuyucular1">
+            <End Role="Okuyucular" EntitySet="Okuyucular" />
+            <End Role="ÖdünçKitaplar" EntitySet="ÖdünçKitaplar" />
+          </AssociationSet>
         </EntityContainer>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
@@ -53,8 +137,35 @@
         </EntityType>
         <EntityContainer Name="Kütüphane_OtomasyonuEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Kullanıcılar" EntityType="Self.Kullanıcılar" />
+          <EntitySet Name="Kaynaklar" EntityType="Model.Kaynaklar" />
           <EntitySet Name="Okuyucular" EntityType="Model.Okuyucular" />
+          <EntitySet Name="ÖdünçKitaplar" EntityType="Model.ÖdünçKitaplar" />
+          <EntitySet Name="sysdiagrams" EntityType="Model.sysdiagrams" />
+          <AssociationSet Name="FK_ÖdünçKitaplar_Kaynaklar" Association="Model.FK_ÖdünçKitaplar_Kaynaklar">
+            <End Role="Kaynaklar" EntitySet="Kaynaklar" />
+            <End Role="ÖdünçKitaplar" EntitySet="ÖdünçKitaplar" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ÖdünçKitaplar_Okuyucular" Association="Model.FK_ÖdünçKitaplar_Okuyucular">
+            <End Role="Okuyucular" EntitySet="Okuyucular" />
+            <End Role="ÖdünçKitaplar" EntitySet="ÖdünçKitaplar" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ÖdünçKitaplar_Okuyucular1" Association="Model.FK_ÖdünçKitaplar_Okuyucular1">
+            <End Role="Okuyucular" EntitySet="Okuyucular" />
+            <End Role="ÖdünçKitaplar" EntitySet="ÖdünçKitaplar" />
+          </AssociationSet>
         </EntityContainer>
+        <EntityType Name="Kaynaklar">
+          <Key>
+            <PropertyRef Name="KitapId" />
+          </Key>
+          <Property Name="KitapId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="KitapAd" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="KitapYazar" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="KitapTür" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="KitapYayınevi" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="KitapSayfaSayısı" Type="Int32" />
+          <NavigationProperty Name="ÖdünçKitaplar" Relationship="Model.FK_ÖdünçKitaplar_Kaynaklar" FromRole="Kaynaklar" ToRole="ÖdünçKitaplar" />
+        </EntityType>
         <EntityType Name="Okuyucular">
           <Key>
             <PropertyRef Name="OkuyucuId" />
@@ -62,11 +173,74 @@
           <Property Name="OkuyucuId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="OkuyucuAd" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
           <Property Name="OkuyucuSoyad" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
-          <Property Name="OkuyucuTC" Type="String" Nullable="false" MaxLength="11" FixedLength="false" Unicode="true" />
+          <Property Name="OkuyucuKod" Type="String" Nullable="false" MaxLength="11" FixedLength="false" Unicode="true" />
           <Property Name="OkuyucuMail" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
           <Property Name="OkuyucuTelefon" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
           <Property Name="OkuyucuCinsiyet" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="ÖdünçKitaplar" Relationship="Model.FK_ÖdünçKitaplar_Okuyucular" FromRole="Okuyucular" ToRole="ÖdünçKitaplar" />
+          <NavigationProperty Name="ÖdünçKitaplar1" Relationship="Model.FK_ÖdünçKitaplar_Okuyucular1" FromRole="Okuyucular" ToRole="ÖdünçKitaplar" />
         </EntityType>
+        <EntityType Name="ÖdünçKitaplar">
+          <Key>
+            <PropertyRef Name="ÖdünçId" />
+          </Key>
+          <Property Name="ÖdünçId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="AlanOkuyucuId" Type="Int32" Nullable="false" />
+          <Property Name="VerenOkuyucuId" Type="Int32" Nullable="false" />
+          <Property Name="KitapId" Type="Int32" Nullable="false" />
+          <Property Name="AlışTarihi" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="VerişTarihi" Type="DateTime" Precision="3" />
+          <Property Name="GeriVerildiMi" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="Kaynaklar" Relationship="Model.FK_ÖdünçKitaplar_Kaynaklar" FromRole="ÖdünçKitaplar" ToRole="Kaynaklar" />
+          <NavigationProperty Name="Okuyucular" Relationship="Model.FK_ÖdünçKitaplar_Okuyucular" FromRole="ÖdünçKitaplar" ToRole="Okuyucular" />
+          <NavigationProperty Name="Okuyucular1" Relationship="Model.FK_ÖdünçKitaplar_Okuyucular1" FromRole="ÖdünçKitaplar" ToRole="Okuyucular" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" Nullable="false" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <Association Name="FK_ÖdünçKitaplar_Kaynaklar">
+          <End Type="Model.Kaynaklar" Role="Kaynaklar" Multiplicity="1" />
+          <End Type="Model.ÖdünçKitaplar" Role="ÖdünçKitaplar" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Kaynaklar">
+              <PropertyRef Name="KitapId" />
+            </Principal>
+            <Dependent Role="ÖdünçKitaplar">
+              <PropertyRef Name="KitapId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ÖdünçKitaplar_Okuyucular">
+          <End Type="Model.Okuyucular" Role="Okuyucular" Multiplicity="1" />
+          <End Type="Model.ÖdünçKitaplar" Role="ÖdünçKitaplar" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Okuyucular">
+              <PropertyRef Name="OkuyucuId" />
+            </Principal>
+            <Dependent Role="ÖdünçKitaplar">
+              <PropertyRef Name="AlanOkuyucuId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_ÖdünçKitaplar_Okuyucular1">
+          <End Type="Model.Okuyucular" Role="Okuyucular" Multiplicity="1" />
+          <End Type="Model.ÖdünçKitaplar" Role="ÖdünçKitaplar" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Okuyucular">
+              <PropertyRef Name="OkuyucuId" />
+            </Principal>
+            <Dependent Role="ÖdünçKitaplar">
+              <PropertyRef Name="VerenOkuyucuId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -87,16 +261,52 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="Kaynaklar">
+            <EntityTypeMapping TypeName="Model.Kaynaklar">
+              <MappingFragment StoreEntitySet="Kaynaklar">
+                <ScalarProperty Name="KitapSayfaSayısı" ColumnName="KitapSayfaSayısı" />
+                <ScalarProperty Name="KitapYayınevi" ColumnName="KitapYayınevi" />
+                <ScalarProperty Name="KitapTür" ColumnName="KitapTür" />
+                <ScalarProperty Name="KitapYazar" ColumnName="KitapYazar" />
+                <ScalarProperty Name="KitapAd" ColumnName="KitapAd" />
+                <ScalarProperty Name="KitapId" ColumnName="KitapId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="Okuyucular">
             <EntityTypeMapping TypeName="Model.Okuyucular">
               <MappingFragment StoreEntitySet="Okuyucular">
                 <ScalarProperty Name="OkuyucuCinsiyet" ColumnName="OkuyucuCinsiyet" />
                 <ScalarProperty Name="OkuyucuTelefon" ColumnName="OkuyucuTelefon" />
                 <ScalarProperty Name="OkuyucuMail" ColumnName="OkuyucuMail" />
-                <ScalarProperty Name="OkuyucuTC" ColumnName="OkuyucuTC" />
+                <ScalarProperty Name="OkuyucuKod" ColumnName="OkuyucuKod" />
                 <ScalarProperty Name="OkuyucuSoyad" ColumnName="OkuyucuSoyad" />
                 <ScalarProperty Name="OkuyucuAd" ColumnName="OkuyucuAd" />
                 <ScalarProperty Name="OkuyucuId" ColumnName="OkuyucuId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ÖdünçKitaplar">
+            <EntityTypeMapping TypeName="Model.ÖdünçKitaplar">
+              <MappingFragment StoreEntitySet="ÖdünçKitaplar">
+                <ScalarProperty Name="GeriVerildiMi" ColumnName="GeriVerildiMi" />
+                <ScalarProperty Name="VerişTarihi" ColumnName="VerişTarihi" />
+                <ScalarProperty Name="AlışTarihi" ColumnName="AlışTarihi" />
+                <ScalarProperty Name="KitapId" ColumnName="KitapId" />
+                <ScalarProperty Name="VerenOkuyucuId" ColumnName="VerenOkuyucuId" />
+                <ScalarProperty Name="AlanOkuyucuId" ColumnName="AlanOkuyucuId" />
+                <ScalarProperty Name="ÖdünçId" ColumnName="ÖdünçId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="Model.sysdiagrams">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="definition" ColumnName="definition" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="name" ColumnName="name" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

@@ -31,6 +31,12 @@ namespace KutuphaneOtomasyonu
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(İşlem_Paneli));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.ÖdünçVerbtn = new System.Windows.Forms.Button();
+            this.Kitapİşlembtn = new System.Windows.Forms.Button();
+            this.KitapSilbtn = new System.Windows.Forms.Button();
+            this.KitapDüzenlebn = new System.Windows.Forms.Button();
+            this.KitapEklebtn = new System.Windows.Forms.Button();
+            this.Kitaplarbtn = new System.Windows.Forms.Button();
             this.KullanıcıSilBtn = new System.Windows.Forms.Button();
             this.ProfilDüzenleBtn = new System.Windows.Forms.Button();
             this.KullaniciEkleBtn = new System.Windows.Forms.Button();
@@ -41,6 +47,13 @@ namespace KutuphaneOtomasyonu
             // 
             // panel1
             // 
+            this.panel1.AutoScroll = true;
+            this.panel1.Controls.Add(this.ÖdünçVerbtn);
+            this.panel1.Controls.Add(this.Kitapİşlembtn);
+            this.panel1.Controls.Add(this.KitapSilbtn);
+            this.panel1.Controls.Add(this.KitapDüzenlebn);
+            this.panel1.Controls.Add(this.KitapEklebtn);
+            this.panel1.Controls.Add(this.Kitaplarbtn);
             this.panel1.Controls.Add(this.KullanıcıSilBtn);
             this.panel1.Controls.Add(this.ProfilDüzenleBtn);
             this.panel1.Controls.Add(this.KullaniciEkleBtn);
@@ -50,6 +63,101 @@ namespace KutuphaneOtomasyonu
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(234, 620);
             this.panel1.TabIndex = 0;
+            // 
+            // ÖdünçVerbtn
+            // 
+            this.ÖdünçVerbtn.Dock = System.Windows.Forms.DockStyle.Top;
+            this.ÖdünçVerbtn.FlatAppearance.BorderSize = 0;
+            this.ÖdünçVerbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.ÖdünçVerbtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.ÖdünçVerbtn.Image = ((System.Drawing.Image)(resources.GetObject("ÖdünçVerbtn.Image")));
+            this.ÖdünçVerbtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.ÖdünçVerbtn.Location = new System.Drawing.Point(0, 540);
+            this.ÖdünçVerbtn.Name = "ÖdünçVerbtn";
+            this.ÖdünçVerbtn.Size = new System.Drawing.Size(234, 60);
+            this.ÖdünçVerbtn.TabIndex = 10;
+            this.ÖdünçVerbtn.Text = "Ödünç Ver";
+            this.ÖdünçVerbtn.UseVisualStyleBackColor = true;
+            // 
+            // Kitapİşlembtn
+            // 
+            this.Kitapİşlembtn.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Kitapİşlembtn.FlatAppearance.BorderSize = 0;
+            this.Kitapİşlembtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Kitapİşlembtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.Kitapİşlembtn.Image = ((System.Drawing.Image)(resources.GetObject("Kitapİşlembtn.Image")));
+            this.Kitapİşlembtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Kitapİşlembtn.Location = new System.Drawing.Point(0, 480);
+            this.Kitapİşlembtn.Name = "Kitapİşlembtn";
+            this.Kitapİşlembtn.Size = new System.Drawing.Size(234, 60);
+            this.Kitapİşlembtn.TabIndex = 9;
+            this.Kitapİşlembtn.Text = "Kitap İşlem";
+            this.Kitapİşlembtn.UseVisualStyleBackColor = true;
+            this.Kitapİşlembtn.Click += new System.EventHandler(this.Kitapİşlembtn_Click);
+            // 
+            // KitapSilbtn
+            // 
+            this.KitapSilbtn.Dock = System.Windows.Forms.DockStyle.Top;
+            this.KitapSilbtn.FlatAppearance.BorderSize = 0;
+            this.KitapSilbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.KitapSilbtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.KitapSilbtn.Image = ((System.Drawing.Image)(resources.GetObject("KitapSilbtn.Image")));
+            this.KitapSilbtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.KitapSilbtn.Location = new System.Drawing.Point(0, 420);
+            this.KitapSilbtn.Name = "KitapSilbtn";
+            this.KitapSilbtn.Size = new System.Drawing.Size(234, 60);
+            this.KitapSilbtn.TabIndex = 8;
+            this.KitapSilbtn.Text = "Kitap Sil";
+            this.KitapSilbtn.UseVisualStyleBackColor = true;
+            this.KitapSilbtn.Click += new System.EventHandler(this.KitapSilbtn_Click);
+            // 
+            // KitapDüzenlebn
+            // 
+            this.KitapDüzenlebn.Dock = System.Windows.Forms.DockStyle.Top;
+            this.KitapDüzenlebn.FlatAppearance.BorderSize = 0;
+            this.KitapDüzenlebn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.KitapDüzenlebn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.KitapDüzenlebn.Image = ((System.Drawing.Image)(resources.GetObject("KitapDüzenlebn.Image")));
+            this.KitapDüzenlebn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.KitapDüzenlebn.Location = new System.Drawing.Point(0, 360);
+            this.KitapDüzenlebn.Name = "KitapDüzenlebn";
+            this.KitapDüzenlebn.Size = new System.Drawing.Size(234, 60);
+            this.KitapDüzenlebn.TabIndex = 7;
+            this.KitapDüzenlebn.Text = "           Kitap Düzenle";
+            this.KitapDüzenlebn.UseVisualStyleBackColor = true;
+            this.KitapDüzenlebn.Click += new System.EventHandler(this.KitapDüzenlebn_Click);
+            // 
+            // KitapEklebtn
+            // 
+            this.KitapEklebtn.Dock = System.Windows.Forms.DockStyle.Top;
+            this.KitapEklebtn.FlatAppearance.BorderSize = 0;
+            this.KitapEklebtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.KitapEklebtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.KitapEklebtn.Image = ((System.Drawing.Image)(resources.GetObject("KitapEklebtn.Image")));
+            this.KitapEklebtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.KitapEklebtn.Location = new System.Drawing.Point(0, 300);
+            this.KitapEklebtn.Name = "KitapEklebtn";
+            this.KitapEklebtn.Size = new System.Drawing.Size(234, 60);
+            this.KitapEklebtn.TabIndex = 6;
+            this.KitapEklebtn.Text = "   Kitap Ekle";
+            this.KitapEklebtn.UseVisualStyleBackColor = true;
+            this.KitapEklebtn.Click += new System.EventHandler(this.KitapEklebtn_Click);
+            // 
+            // Kitaplarbtn
+            // 
+            this.Kitaplarbtn.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Kitaplarbtn.FlatAppearance.BorderSize = 0;
+            this.Kitaplarbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Kitaplarbtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.Kitaplarbtn.Image = ((System.Drawing.Image)(resources.GetObject("Kitaplarbtn.Image")));
+            this.Kitaplarbtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Kitaplarbtn.Location = new System.Drawing.Point(0, 240);
+            this.Kitaplarbtn.Name = "Kitaplarbtn";
+            this.Kitaplarbtn.Size = new System.Drawing.Size(234, 60);
+            this.Kitaplarbtn.TabIndex = 5;
+            this.Kitaplarbtn.Text = "Kitaplar";
+            this.Kitaplarbtn.UseVisualStyleBackColor = true;
+            this.Kitaplarbtn.Click += new System.EventHandler(this.Kitaplarbtn_Click);
             // 
             // KullanıcıSilBtn
             // 
@@ -120,7 +228,7 @@ namespace KutuphaneOtomasyonu
             this.KullanıcıBilgiPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.KullanıcıBilgiPanel.Location = new System.Drawing.Point(234, 0);
             this.KullanıcıBilgiPanel.Name = "KullanıcıBilgiPanel";
-            this.KullanıcıBilgiPanel.Size = new System.Drawing.Size(400, 76);
+            this.KullanıcıBilgiPanel.Size = new System.Drawing.Size(400, 60);
             this.KullanıcıBilgiPanel.TabIndex = 1;
             // 
             // İşlem_Paneli
@@ -147,5 +255,11 @@ namespace KutuphaneOtomasyonu
         private System.Windows.Forms.Button KullanicilarBtn;
         private System.Windows.Forms.Panel KullanıcıBilgiPanel;
         private System.Windows.Forms.Button KullanıcıSilBtn;
+        private System.Windows.Forms.Button KitapSilbtn;
+        private System.Windows.Forms.Button KitapDüzenlebn;
+        private System.Windows.Forms.Button KitapEklebtn;
+        private System.Windows.Forms.Button Kitaplarbtn;
+        private System.Windows.Forms.Button ÖdünçVerbtn;
+        private System.Windows.Forms.Button Kitapİşlembtn;
     }
 }

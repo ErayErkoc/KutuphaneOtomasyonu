@@ -54,7 +54,7 @@ namespace KutuphaneOtomasyonu.Kullanıcı
             
             okuyucu.OkuyucuAd = EkleAdtxt.Text;
             okuyucu.OkuyucuSoyad = EkleSoyadtxt.Text;
-            okuyucu.OkuyucuTC = EkleTCtxt.Text;
+            okuyucu.OkuyucuKod = EkleTCtxt.Text;
             okuyucu.OkuyucuMail = EkleMailtxt.Text;
             okuyucu.OkuyucuTelefon = EkleTelefontxt.Text;
             if (radioErkek.Checked == true)

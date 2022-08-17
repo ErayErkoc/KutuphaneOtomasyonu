@@ -10,10 +10,10 @@ using System.Windows.Forms;
 
 namespace KutuphaneOtomasyonu
 {
-    public partial class Form1 : Form
+    public partial class Giriş : Form
     {
         Kütüphane_OtomasyonuEntities db = new Kütüphane_OtomasyonuEntities();
-        public Form1()
+        public Giriş()
         {
             InitializeComponent();
             

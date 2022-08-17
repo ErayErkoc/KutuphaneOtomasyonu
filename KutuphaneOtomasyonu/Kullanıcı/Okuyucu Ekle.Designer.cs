@@ -70,9 +70,9 @@ namespace KutuphaneOtomasyonu.Kullanıcı
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(13, 76);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(27, 13);
+            this.label3.Size = new System.Drawing.Size(32, 13);
             this.label3.TabIndex = 2;
-            this.label3.Text = "TC :";
+            this.label3.Text = "Kod :";
             // 
             // label4
             // 

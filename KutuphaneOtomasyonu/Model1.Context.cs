@@ -26,6 +26,9 @@ namespace KutuphaneOtomasyonu
         }
     
         public virtual DbSet<Kullanıcılar> Kullanıcılar { get; set; }
+        public virtual DbSet<Kaynaklar> Kaynaklar { get; set; }
         public virtual DbSet<Okuyucular> Okuyucular { get; set; }
+        public virtual DbSet<ÖdünçKitaplar> ÖdünçKitaplar { get; set; }
+        public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
     }
 }

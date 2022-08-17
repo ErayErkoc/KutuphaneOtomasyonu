@@ -5,8 +5,14 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="9d85bf6b887d453fa1711f237e350395" Name="Diagram1">
-        <EntityTypeShape EntityType="Model.Kullanıcılar" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="Model.Okuyucular" Width="1.5" PointX="3.375" PointY="0.75" />
+        <EntityTypeShape EntityType="Model.Kullanıcılar" Width="1.5" PointX="0.875" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="Model.Kaynaklar" Width="1.5" PointX="5.5" PointY="0.875" />
+        <EntityTypeShape EntityType="Model.Okuyucular" Width="1.5" PointX="3.25" PointY="0.75" />
+        <EntityTypeShape EntityType="Model.ÖdünçKitaplar" Width="1.5" PointX="8.125" PointY="0.75" />
+        <EntityTypeShape EntityType="Model.sysdiagrams" Width="1.5" PointX="0.75" PointY="4.875" />
+        <AssociationConnector Association="Model.FK_ÖdünçKitaplar_Kaynaklar" />
+        <AssociationConnector Association="Model.FK_ÖdünçKitaplar_Okuyucular" />
+        <AssociationConnector Association="Model.FK_ÖdünçKitaplar_Okuyucular1" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
