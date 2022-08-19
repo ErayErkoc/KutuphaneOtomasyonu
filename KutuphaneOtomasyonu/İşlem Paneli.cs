@@ -1,4 +1,5 @@
 ﻿using KutuphaneOtomasyonu.Kitap;
+using KutuphaneOtomasyonu.Kitap_İşlem;
 using KutuphaneOtomasyonu.Kullanıcı;
 using System;
 using System.Collections.Generic;
@@ -28,6 +29,8 @@ namespace KutuphaneOtomasyonu
             KitapDüzenlebn.Visible = false;
             KitapSilbtn.Visible = false;
             ÖdünçVerbtn.Visible = false;
+            GeriAlbtn.Visible = false;
+            
 
         }
 
@@ -119,11 +122,27 @@ namespace KutuphaneOtomasyonu
             if (ÖdünçVerbtn.Visible==false)
             {
                 ÖdünçVerbtn.Visible = true;
+                GeriAlbtn.Visible = true;
             }
             else
             {
                 ÖdünçVerbtn.Visible = false;
+                GeriAlbtn.Visible = false;
             }
+        }
+
+        private void ÖdünçVerbtn_Click(object sender, EventArgs e)
+        {
+            Ödünç_Ver ÖdünçVer = new Ödünç_Ver();
+            ÖdünçVer.MdiParent = this;
+            ÖdünçVer.Show();
+        }
+
+        private void GeriAlbtn_Click(object sender, EventArgs e)
+        {
+            Geri_Al GeriAl = new Geri_Al();
+            GeriAl.MdiParent = this;
+            GeriAl.Show();
         }
     }
 }

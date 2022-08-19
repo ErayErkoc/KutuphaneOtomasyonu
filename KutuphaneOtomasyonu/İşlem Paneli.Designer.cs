@@ -31,6 +31,7 @@ namespace KutuphaneOtomasyonu
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(İşlem_Paneli));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.GeriAlbtn = new System.Windows.Forms.Button();
             this.ÖdünçVerbtn = new System.Windows.Forms.Button();
             this.Kitapİşlembtn = new System.Windows.Forms.Button();
             this.KitapSilbtn = new System.Windows.Forms.Button();
@@ -48,6 +49,7 @@ namespace KutuphaneOtomasyonu
             // panel1
             // 
             this.panel1.AutoScroll = true;
+            this.panel1.Controls.Add(this.GeriAlbtn);
             this.panel1.Controls.Add(this.ÖdünçVerbtn);
             this.panel1.Controls.Add(this.Kitapİşlembtn);
             this.panel1.Controls.Add(this.KitapSilbtn);
@@ -64,6 +66,22 @@ namespace KutuphaneOtomasyonu
             this.panel1.Size = new System.Drawing.Size(234, 620);
             this.panel1.TabIndex = 0;
             // 
+            // GeriAlbtn
+            // 
+            this.GeriAlbtn.Dock = System.Windows.Forms.DockStyle.Top;
+            this.GeriAlbtn.FlatAppearance.BorderSize = 0;
+            this.GeriAlbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.GeriAlbtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.GeriAlbtn.Image = ((System.Drawing.Image)(resources.GetObject("GeriAlbtn.Image")));
+            this.GeriAlbtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.GeriAlbtn.Location = new System.Drawing.Point(0, 600);
+            this.GeriAlbtn.Name = "GeriAlbtn";
+            this.GeriAlbtn.Size = new System.Drawing.Size(217, 60);
+            this.GeriAlbtn.TabIndex = 11;
+            this.GeriAlbtn.Text = "Geri Al";
+            this.GeriAlbtn.UseVisualStyleBackColor = true;
+            this.GeriAlbtn.Click += new System.EventHandler(this.GeriAlbtn_Click);
+            // 
             // ÖdünçVerbtn
             // 
             this.ÖdünçVerbtn.Dock = System.Windows.Forms.DockStyle.Top;
@@ -74,10 +92,11 @@ namespace KutuphaneOtomasyonu
             this.ÖdünçVerbtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.ÖdünçVerbtn.Location = new System.Drawing.Point(0, 540);
             this.ÖdünçVerbtn.Name = "ÖdünçVerbtn";
-            this.ÖdünçVerbtn.Size = new System.Drawing.Size(234, 60);
+            this.ÖdünçVerbtn.Size = new System.Drawing.Size(217, 60);
             this.ÖdünçVerbtn.TabIndex = 10;
             this.ÖdünçVerbtn.Text = "Ödünç Ver";
             this.ÖdünçVerbtn.UseVisualStyleBackColor = true;
+            this.ÖdünçVerbtn.Click += new System.EventHandler(this.ÖdünçVerbtn_Click);
             // 
             // Kitapİşlembtn
             // 
@@ -89,7 +108,7 @@ namespace KutuphaneOtomasyonu
             this.Kitapİşlembtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.Kitapİşlembtn.Location = new System.Drawing.Point(0, 480);
             this.Kitapİşlembtn.Name = "Kitapİşlembtn";
-            this.Kitapİşlembtn.Size = new System.Drawing.Size(234, 60);
+            this.Kitapİşlembtn.Size = new System.Drawing.Size(217, 60);
             this.Kitapİşlembtn.TabIndex = 9;
             this.Kitapİşlembtn.Text = "Kitap İşlem";
             this.Kitapİşlembtn.UseVisualStyleBackColor = true;
@@ -105,7 +124,7 @@ namespace KutuphaneOtomasyonu
             this.KitapSilbtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.KitapSilbtn.Location = new System.Drawing.Point(0, 420);
             this.KitapSilbtn.Name = "KitapSilbtn";
-            this.KitapSilbtn.Size = new System.Drawing.Size(234, 60);
+            this.KitapSilbtn.Size = new System.Drawing.Size(217, 60);
             this.KitapSilbtn.TabIndex = 8;
             this.KitapSilbtn.Text = "Kitap Sil";
             this.KitapSilbtn.UseVisualStyleBackColor = true;
@@ -121,7 +140,7 @@ namespace KutuphaneOtomasyonu
             this.KitapDüzenlebn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.KitapDüzenlebn.Location = new System.Drawing.Point(0, 360);
             this.KitapDüzenlebn.Name = "KitapDüzenlebn";
-            this.KitapDüzenlebn.Size = new System.Drawing.Size(234, 60);
+            this.KitapDüzenlebn.Size = new System.Drawing.Size(217, 60);
             this.KitapDüzenlebn.TabIndex = 7;
             this.KitapDüzenlebn.Text = "           Kitap Düzenle";
             this.KitapDüzenlebn.UseVisualStyleBackColor = true;
@@ -137,7 +156,7 @@ namespace KutuphaneOtomasyonu
             this.KitapEklebtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.KitapEklebtn.Location = new System.Drawing.Point(0, 300);
             this.KitapEklebtn.Name = "KitapEklebtn";
-            this.KitapEklebtn.Size = new System.Drawing.Size(234, 60);
+            this.KitapEklebtn.Size = new System.Drawing.Size(217, 60);
             this.KitapEklebtn.TabIndex = 6;
             this.KitapEklebtn.Text = "   Kitap Ekle";
             this.KitapEklebtn.UseVisualStyleBackColor = true;
@@ -153,7 +172,7 @@ namespace KutuphaneOtomasyonu
             this.Kitaplarbtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.Kitaplarbtn.Location = new System.Drawing.Point(0, 240);
             this.Kitaplarbtn.Name = "Kitaplarbtn";
-            this.Kitaplarbtn.Size = new System.Drawing.Size(234, 60);
+            this.Kitaplarbtn.Size = new System.Drawing.Size(217, 60);
             this.Kitaplarbtn.TabIndex = 5;
             this.Kitaplarbtn.Text = "Kitaplar";
             this.Kitaplarbtn.UseVisualStyleBackColor = true;
@@ -169,7 +188,7 @@ namespace KutuphaneOtomasyonu
             this.KullanıcıSilBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.KullanıcıSilBtn.Location = new System.Drawing.Point(0, 180);
             this.KullanıcıSilBtn.Name = "KullanıcıSilBtn";
-            this.KullanıcıSilBtn.Size = new System.Drawing.Size(234, 60);
+            this.KullanıcıSilBtn.Size = new System.Drawing.Size(217, 60);
             this.KullanıcıSilBtn.TabIndex = 4;
             this.KullanıcıSilBtn.Text = "Okuyucu Sil";
             this.KullanıcıSilBtn.UseVisualStyleBackColor = true;
@@ -185,7 +204,7 @@ namespace KutuphaneOtomasyonu
             this.ProfilDüzenleBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.ProfilDüzenleBtn.Location = new System.Drawing.Point(0, 120);
             this.ProfilDüzenleBtn.Name = "ProfilDüzenleBtn";
-            this.ProfilDüzenleBtn.Size = new System.Drawing.Size(234, 60);
+            this.ProfilDüzenleBtn.Size = new System.Drawing.Size(217, 60);
             this.ProfilDüzenleBtn.TabIndex = 3;
             this.ProfilDüzenleBtn.Text = "           Okuyucu Düzenle";
             this.ProfilDüzenleBtn.UseVisualStyleBackColor = true;
@@ -201,7 +220,7 @@ namespace KutuphaneOtomasyonu
             this.KullaniciEkleBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.KullaniciEkleBtn.Location = new System.Drawing.Point(0, 60);
             this.KullaniciEkleBtn.Name = "KullaniciEkleBtn";
-            this.KullaniciEkleBtn.Size = new System.Drawing.Size(234, 60);
+            this.KullaniciEkleBtn.Size = new System.Drawing.Size(217, 60);
             this.KullaniciEkleBtn.TabIndex = 2;
             this.KullaniciEkleBtn.Text = "   Okuyucu Ekle";
             this.KullaniciEkleBtn.UseVisualStyleBackColor = true;
@@ -217,7 +236,7 @@ namespace KutuphaneOtomasyonu
             this.KullanicilarBtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.KullanicilarBtn.Location = new System.Drawing.Point(0, 0);
             this.KullanicilarBtn.Name = "KullanicilarBtn";
-            this.KullanicilarBtn.Size = new System.Drawing.Size(234, 60);
+            this.KullanicilarBtn.Size = new System.Drawing.Size(217, 60);
             this.KullanicilarBtn.TabIndex = 2;
             this.KullanicilarBtn.Text = "Kullanıcılar";
             this.KullanicilarBtn.UseVisualStyleBackColor = true;
@@ -261,5 +280,6 @@ namespace KutuphaneOtomasyonu
         private System.Windows.Forms.Button Kitaplarbtn;
         private System.Windows.Forms.Button ÖdünçVerbtn;
         private System.Windows.Forms.Button Kitapİşlembtn;
+        private System.Windows.Forms.Button GeriAlbtn;
     }
 }
