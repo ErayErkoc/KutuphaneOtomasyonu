@@ -22,7 +22,21 @@ namespace KutuphaneOtomasyonu.Kitap_İşlem
         private void Geri_Al_Load(object sender, EventArgs e)
         {
             var ÖdünçKitap = db.ÖdünçKitaplar.Where(x => x.GeriVerildiMi == false).ToList();
-            dataGridView1.DataSource = ÖdünçKitap.ToList(); 
+            dataGridView1.DataSource = ÖdünçKitap.ToList();
+
+            //istenmeyen kolonları gizledim
+            dataGridView1.Columns[0].Visible = false;
+            dataGridView1.Columns[7].Visible = false;
+            dataGridView1.Columns[8].Visible = false;
+            dataGridView1.Columns[9].Visible = false;
+
+            // Veritabanından gelen kolon isimlerini değiştirdim
+            dataGridView1.Columns[1].HeaderText = "Alan Okuyucu";
+            dataGridView1.Columns[2].HeaderText = "Veren Okuyucu";
+            dataGridView1.Columns[3].HeaderText = "Kitap Adı";
+            dataGridView1.Columns[4].HeaderText = "Alış Tarihi";
+            dataGridView1.Columns[5].HeaderText = "Veriş Tarihi";
+            dataGridView1.Columns[6].HeaderText = "Geri Verildi Mi?";
         }
 
         private void İadeEtbtn_Click(object sender, EventArgs e)
@@ -33,8 +47,8 @@ namespace KutuphaneOtomasyonu.Kitap_İşlem
             db.SaveChanges();
             var ÖdünçKitap = db.ÖdünçKitaplar.Where(x => x.GeriVerildiMi == false).ToList();
             dataGridView1.DataSource = ÖdünçKitap.ToList();
-            
 
+           
         }
     }
 }

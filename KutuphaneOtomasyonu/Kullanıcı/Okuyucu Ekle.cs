@@ -22,11 +22,19 @@ namespace KutuphaneOtomasyonu.Kullanıcı
         {
             var Okuyucular = db.Okuyucular.ToList();
             dataGridView1.DataSource = Okuyucular.ToList();
-        }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            Listele();
+            // istenmeyen kolonları gizledim
+            dataGridView1.Columns[0].Visible = false;
+            dataGridView1.Columns[7].Visible = false;
+            dataGridView1.Columns[8].Visible = false;
+
+            // Veritabanından gelen kolon isimlerini değiştirdim
+            dataGridView1.Columns[1].HeaderText = "Ad";
+            dataGridView1.Columns[2].HeaderText = "Soyad";
+            dataGridView1.Columns[3].HeaderText = "Kod";
+            dataGridView1.Columns[4].HeaderText = "Email";
+            dataGridView1.Columns[5].HeaderText = "Telefon";
+            dataGridView1.Columns[6].HeaderText = "Cinsiyet";
         }
 
         private void OkuyucuKaydetbtn_Click(object sender, EventArgs e)
@@ -52,9 +60,12 @@ namespace KutuphaneOtomasyonu.Kullanıcı
 
             db.Okuyucular.Add(okuyucu);
             db.SaveChanges();
-            Listele();
+            
         }
 
-       
+        private void Okuyucu_Ekle_Load(object sender, EventArgs e)
+        {
+            Listele();
+        }
     }
 }

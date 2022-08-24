@@ -167,6 +167,7 @@ namespace KutuphaneOtomasyonu.Kitap
             this.Controls.Add(this.dataGridView1);
             this.Name = "Kitap_Ekle";
             this.Text = "Kitap_Ekle";
+            this.Load += new System.EventHandler(this.Kitap_Ekle_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
             this.ResumeLayout(false);

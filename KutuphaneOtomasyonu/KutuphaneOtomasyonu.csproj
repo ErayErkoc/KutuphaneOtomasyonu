@@ -70,6 +70,12 @@
     <Compile Include="Kitap İşlem\Geri Al.Designer.cs">
       <DependentUpon>Geri Al.cs</DependentUpon>
     </Compile>
+    <Compile Include="Kitap İşlem\Takip.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Kitap İşlem\Takip.Designer.cs">
+      <DependentUpon>Takip.cs</DependentUpon>
+    </Compile>
     <Compile Include="Kitap İşlem\Ödünç Ver.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -164,6 +170,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Kitap İşlem\Geri Al.resx">
       <DependentUpon>Geri Al.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Kitap İşlem\Takip.resx">
+      <DependentUpon>Takip.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Kitap İşlem\Ödünç Ver.resx">
       <DependentUpon>Ödünç Ver.cs</DependentUpon>

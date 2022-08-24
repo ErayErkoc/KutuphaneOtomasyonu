@@ -25,12 +25,32 @@ namespace KutuphaneOtomasyonu.Kitap_İşlem
             dataGridView1.DataSource = ÖdünçKitaplar.ToList();
             var Kaynaklar = db.Kaynaklar.ToList();
             dataGridView2.DataSource = Kaynaklar.ToList();
-           //istenmeyen kolonları gizledim
+            //istenmeyen kolonları gizledim
+            dataGridView1.Columns[0].Visible = false;
             dataGridView1.Columns[7].Visible = false;
             dataGridView1.Columns[8].Visible = false;
             dataGridView1.Columns[9].Visible = false;
 
-            
+            // Veritabanından gelen kolon isimlerini değiştirdim
+            dataGridView1.Columns[1].HeaderText = "Ad";
+            dataGridView1.Columns[2].HeaderText = "Soyad";
+            dataGridView1.Columns[3].HeaderText = "Kitap Adı";
+            dataGridView1.Columns[4].HeaderText = "Alış Tarihi";
+            dataGridView1.Columns[5].HeaderText = "Veriş Tarihi";
+            dataGridView1.Columns[6].HeaderText = "Geri Verildi Mi?";
+
+            // istenmeyen kolonları gizledim
+            dataGridView2.Columns[0].Visible = false;
+            dataGridView2.Columns[6].Visible = false;
+
+            // Veritabanından gelen kolon isimlerini değiştirdim
+            dataGridView2.Columns[1].HeaderText = "Kitap Adı";
+            dataGridView2.Columns[2].HeaderText = "Yazarı";
+            dataGridView2.Columns[3].HeaderText = "Türü";
+            dataGridView2.Columns[4].HeaderText = "Yayınevi";
+            dataGridView2.Columns[5].HeaderText = "Sayfa Sayısı";
+
+
         }
 
         private void Arabtn_Click(object sender, EventArgs e)
@@ -94,5 +114,6 @@ namespace KutuphaneOtomasyonu.Kitap_İşlem
 
         }
 
+        
     }
 }

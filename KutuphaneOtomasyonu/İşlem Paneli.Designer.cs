@@ -43,12 +43,14 @@ namespace KutuphaneOtomasyonu
             this.KullaniciEkleBtn = new System.Windows.Forms.Button();
             this.KullanicilarBtn = new System.Windows.Forms.Button();
             this.KullanıcıBilgiPanel = new System.Windows.Forms.Panel();
+            this.Takipbtn = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.AutoScroll = true;
+            this.panel1.Controls.Add(this.Takipbtn);
             this.panel1.Controls.Add(this.GeriAlbtn);
             this.panel1.Controls.Add(this.ÖdünçVerbtn);
             this.panel1.Controls.Add(this.Kitapİşlembtn);
@@ -63,7 +65,7 @@ namespace KutuphaneOtomasyonu
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(234, 620);
+            this.panel1.Size = new System.Drawing.Size(234, 639);
             this.panel1.TabIndex = 0;
             // 
             // GeriAlbtn
@@ -247,14 +249,30 @@ namespace KutuphaneOtomasyonu
             this.KullanıcıBilgiPanel.Dock = System.Windows.Forms.DockStyle.Top;
             this.KullanıcıBilgiPanel.Location = new System.Drawing.Point(234, 0);
             this.KullanıcıBilgiPanel.Name = "KullanıcıBilgiPanel";
-            this.KullanıcıBilgiPanel.Size = new System.Drawing.Size(400, 60);
+            this.KullanıcıBilgiPanel.Size = new System.Drawing.Size(409, 60);
             this.KullanıcıBilgiPanel.TabIndex = 1;
+            // 
+            // Takipbtn
+            // 
+            this.Takipbtn.Dock = System.Windows.Forms.DockStyle.Top;
+            this.Takipbtn.FlatAppearance.BorderSize = 0;
+            this.Takipbtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Takipbtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(162)));
+            this.Takipbtn.Image = ((System.Drawing.Image)(resources.GetObject("Takipbtn.Image")));
+            this.Takipbtn.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.Takipbtn.Location = new System.Drawing.Point(0, 660);
+            this.Takipbtn.Name = "Takipbtn";
+            this.Takipbtn.Size = new System.Drawing.Size(217, 60);
+            this.Takipbtn.TabIndex = 12;
+            this.Takipbtn.Text = " Takip";
+            this.Takipbtn.UseVisualStyleBackColor = true;
+            this.Takipbtn.Click += new System.EventHandler(this.Takipbtn_Click);
             // 
             // İşlem_Paneli
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(634, 620);
+            this.ClientSize = new System.Drawing.Size(643, 639);
             this.Controls.Add(this.KullanıcıBilgiPanel);
             this.Controls.Add(this.panel1);
             this.IsMdiContainer = true;
@@ -281,5 +299,6 @@ namespace KutuphaneOtomasyonu
         private System.Windows.Forms.Button ÖdünçVerbtn;
         private System.Windows.Forms.Button Kitapİşlembtn;
         private System.Windows.Forms.Button GeriAlbtn;
+        private System.Windows.Forms.Button Takipbtn;
     }
 }

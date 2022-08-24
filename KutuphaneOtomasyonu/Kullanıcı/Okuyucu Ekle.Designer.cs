@@ -175,7 +175,6 @@ namespace KutuphaneOtomasyonu.Kullanıcı
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(733, 426);
             this.dataGridView1.TabIndex = 14;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // Okuyucu_Ekle
             // 
@@ -199,6 +198,7 @@ namespace KutuphaneOtomasyonu.Kullanıcı
             this.Controls.Add(this.label1);
             this.Name = "Okuyucu_Ekle";
             this.Text = "Okuyucu_Ekle";
+            this.Load += new System.EventHandler(this.Okuyucu_Ekle_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

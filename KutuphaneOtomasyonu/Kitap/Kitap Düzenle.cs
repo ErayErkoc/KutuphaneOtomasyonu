@@ -23,6 +23,7 @@ namespace KutuphaneOtomasyonu.Kitap
         {
             var kitaplar = db.Kaynaklar.ToList();
             dataGridView1.DataSource = kitaplar.ToList();
+            Listele();
         }
 
         private void dataGridView1_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
@@ -38,6 +39,17 @@ namespace KutuphaneOtomasyonu.Kitap
         {
             var Kitaplar = db.Kaynaklar.ToList();
             dataGridView1.DataSource = Kitaplar.ToList();
+
+            // istenmeyen kolonları gizledim
+            dataGridView1.Columns[0].Visible = false;
+            dataGridView1.Columns[6].Visible = false;
+
+            // Veritabanından gelen kolon isimlerini değiştirdim
+            dataGridView1.Columns[1].HeaderText = "Kitap Adı";
+            dataGridView1.Columns[2].HeaderText = "Yazarı";
+            dataGridView1.Columns[3].HeaderText = "Türü";
+            dataGridView1.Columns[4].HeaderText = "Yayınevi";
+            dataGridView1.Columns[5].HeaderText = "Sayfa Sayısı";
         }
 
         private void KitapGüncellebtn_Click(object sender, EventArgs e)
@@ -50,7 +62,6 @@ namespace KutuphaneOtomasyonu.Kitap
             kitap.KitapTür = KitapTürütxt.Text;
             kitap.KitapYayınevi = Yayınevitxt.Text;
             kitap.KitapSayfaSayısı = Convert.ToInt32(numericUpDown1.Value);
-            Listele();
             db.SaveChanges();
         }
     }
