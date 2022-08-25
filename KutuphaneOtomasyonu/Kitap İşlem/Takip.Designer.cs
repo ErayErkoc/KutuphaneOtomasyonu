@@ -75,9 +75,9 @@ namespace KutuphaneOtomasyonu.Kitap_İşlem
             // dataGridView2
             // 
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(434, 19);
+            this.dataGridView2.Location = new System.Drawing.Point(483, 55);
             this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(346, 36);
+            this.dataGridView2.Size = new System.Drawing.Size(303, 18);
             this.dataGridView2.TabIndex = 4;
             // 
             // Takip
@@ -92,6 +92,7 @@ namespace KutuphaneOtomasyonu.Kitap_İşlem
             this.Controls.Add(this.dataGridView1);
             this.Name = "Takip";
             this.Text = "Takip";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Takip_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();

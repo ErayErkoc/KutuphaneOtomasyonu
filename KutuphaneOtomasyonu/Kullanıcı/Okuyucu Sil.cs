@@ -44,11 +44,18 @@ namespace KutuphaneOtomasyonu.Kullanıcı
 
         private void button1_Click(object sender, EventArgs e)
         {
-            int SeçilenId = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value);
-            var okuyucu = db.Okuyucular.Where(x => x.OkuyucuId == SeçilenId).FirstOrDefault();
-            db.Okuyucular.Remove(okuyucu);
-            db.SaveChanges();
-            Listele();
+            DialogResult SilinsinMi = MessageBox.Show("Okuyucu Silinecek, Onaylıyor musun?","Okuyucu Sil",MessageBoxButtons.YesNo);
+
+            while (SilinsinMi == DialogResult.Yes)
+            {
+                int SeçilenId = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value);
+                var okuyucu = db.Okuyucular.Where(x => x.OkuyucuId == SeçilenId).FirstOrDefault();
+                db.Okuyucular.Remove(okuyucu);
+                db.SaveChanges();
+                Listele();
+                MessageBox.Show("OKUYUCU SİLİNDİ");
+            }
+
         }
     }
 }

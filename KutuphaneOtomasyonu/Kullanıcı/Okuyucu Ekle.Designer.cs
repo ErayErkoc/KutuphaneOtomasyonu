@@ -198,6 +198,7 @@ namespace KutuphaneOtomasyonu.Kullanıcı
             this.Controls.Add(this.label1);
             this.Name = "Okuyucu_Ekle";
             this.Text = "Okuyucu_Ekle";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Okuyucu_Ekle_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);

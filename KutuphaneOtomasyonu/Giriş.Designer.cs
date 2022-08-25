@@ -94,10 +94,11 @@ namespace KutuphaneOtomasyonu
             this.KullanıcıAdtxt.Size = new System.Drawing.Size(184, 20);
             this.KullanıcıAdtxt.TabIndex = 7;
             // 
-            // Form1
+            // Giriş
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
             this.BackColor = System.Drawing.Color.DimGray;
             this.ClientSize = new System.Drawing.Size(337, 270);
             this.Controls.Add(this.KullanıcıAdtxt);
@@ -108,7 +109,7 @@ namespace KutuphaneOtomasyonu
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "Form1";
+            this.Name = "Giriş";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();

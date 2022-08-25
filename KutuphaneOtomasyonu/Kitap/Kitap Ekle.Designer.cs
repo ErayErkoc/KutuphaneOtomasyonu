@@ -50,7 +50,7 @@ namespace KutuphaneOtomasyonu.Kitap
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(339, 12);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(449, 426);
+            this.dataGridView1.Size = new System.Drawing.Size(543, 426);
             this.dataGridView1.TabIndex = 0;
             // 
             // label1
@@ -152,7 +152,7 @@ namespace KutuphaneOtomasyonu.Kitap
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(894, 450);
             this.Controls.Add(this.KitapEklebtn);
             this.Controls.Add(this.numericUpDown1);
             this.Controls.Add(this.Yayınevitxt);
@@ -167,6 +167,7 @@ namespace KutuphaneOtomasyonu.Kitap
             this.Controls.Add(this.dataGridView1);
             this.Name = "Kitap_Ekle";
             this.Text = "Kitap_Ekle";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Kitap_Ekle_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();

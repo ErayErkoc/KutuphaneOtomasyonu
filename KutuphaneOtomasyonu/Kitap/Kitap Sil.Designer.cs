@@ -61,6 +61,7 @@ namespace KutuphaneOtomasyonu.Kitap
             this.Controls.Add(this.dataGridView1);
             this.Name = "Kitap_Sil";
             this.Text = "Kitap_Sil";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Kitap_Sil_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);

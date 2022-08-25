@@ -61,6 +61,7 @@ namespace KutuphaneOtomasyonu.Kullanıcı
             this.Controls.Add(this.dataGridView1);
             this.Name = "Okuyucu_Sil";
             this.Text = "Okuyucu_Sil";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Okuyucu_Sil_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);

@@ -46,11 +46,15 @@ namespace KutuphaneOtomasyonu.Kitap
 
         private void KitapSilbtn_Click(object sender, EventArgs e)
         {
-            int SeçilenId = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value);
-            var kitap = db.Kaynaklar.Where(x => x.KitapId == SeçilenId).FirstOrDefault();
-            db.Kaynaklar.Remove(kitap);
-            db.SaveChanges();
-           
+            DialogResult SilinsinMi = MessageBox.Show("Kitap Silinecek, Onaylıyor musun?", "Kitap Sil", MessageBoxButtons.YesNo);
+            while (SilinsinMi == DialogResult.Yes)
+            {
+                int SeçilenId = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value);
+                var kitap = db.Kaynaklar.Where(x => x.KitapId == SeçilenId).FirstOrDefault();
+                db.Kaynaklar.Remove(kitap);
+                db.SaveChanges();
+                MessageBox.Show("KİTAP SİLİNDİ");
+            }
         }
     }
 }

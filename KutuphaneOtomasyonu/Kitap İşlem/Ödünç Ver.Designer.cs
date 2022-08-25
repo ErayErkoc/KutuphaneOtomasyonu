@@ -94,7 +94,6 @@ namespace KutuphaneOtomasyonu.Kitap_İşlem
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.Size = new System.Drawing.Size(420, 177);
             this.dataGridView2.TabIndex = 5;
-            
             // 
             // KitapAratxt
             // 
@@ -168,6 +167,7 @@ namespace KutuphaneOtomasyonu.Kitap_İşlem
             this.Controls.Add(this.dataGridView1);
             this.Name = "Ödünç_Ver";
             this.Text = "Ödünç_Ver";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Ödünç_Ver_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();

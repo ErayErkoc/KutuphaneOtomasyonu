@@ -30,19 +30,21 @@ namespace KutuphaneOtomasyonu.Kitap_İşlem
 
         private void Takip_Load(object sender, EventArgs e)
         {
-            var Kaynaklar = db.Kaynaklar.ToList();
-            dataGridView1.DataSource = Kaynaklar.ToList();
+            var Kitaplar = db.Kaynaklar.ToList();
+            dataGridView1.DataSource = Kitaplar.ToList();
 
-            var ÖdünçKitaplar = db.ÖdünçKitaplar.ToList();
-            dataGridView2.DataSource = ÖdünçKitaplar.ToList();
-            // Sadece AlanOkuyucuId yi almak için çağırdım ve gerekli olmadığı için visible'ı false yaptım
+        
+
+            var Ödünç = db.ÖdünçKitaplar.ToList();
+            dataGridView2.DataSource = Ödünç.ToList();
             dataGridView2.Visible = false;
 
             //istenmeyen kolonları gizledim
             dataGridView1.Columns[0].Visible = false;
             dataGridView1.Columns[6].Visible = false;
 
-            // Veritabanından gelen kolon isimlerini değiştirdim
+
+            //Veritabanından gelen kolon isimlerini değiştirdim
             dataGridView1.Columns[1].HeaderText = "Kitap Adı";
             dataGridView1.Columns[2].HeaderText = "Yazarı";
             dataGridView1.Columns[3].HeaderText = "Türü";
@@ -52,22 +54,15 @@ namespace KutuphaneOtomasyonu.Kitap_İşlem
 
         private void OkuyucuBulbtn_Click(object sender, EventArgs e)
         {
-            // DEVAM EDİLECEK KISIM 
-
-            //int SeçilenKitapId = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value);
-            //var SeçilenKitap = db.Kaynaklar.Where(x => x.KitapId == SeçilenKitapId).FirstOrDefault();
-
-            //if ( SeçilenKitap != null)
-            //{
-            //    int ArananKitapId = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value);
-                
-            //    label1.Text = Convert.ToString( dataGridView2.CurrentRow.Cells[1].Value);
-            //}
-            //else
-            //{
-            //    label1.Text = ("OKYUCU BULUNAMADI");
-            //}
-
+            int SeçilenKitapId = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value);
+            var SeçilenKitap = db.Kaynaklar.Where(x => x.KitapId == SeçilenKitapId).FirstOrDefault();
+            var OkuyucuVarmı = db.ÖdünçKitaplar.Where(x => x.KitapId == SeçilenKitapId).FirstOrDefault();
+            if (OkuyucuVarmı != null)
+            {
+                label1.Text = ("Kitabı Alan Okuyucu : " + OkuyucuVarmı.Okuyucular.OkuyucuAd+" "+OkuyucuVarmı.Okuyucular.OkuyucuSoyad); 
+            }
+            else
+                label1.Text = (" KULLANICI BULUNAMADI !");
         }
     }
 }
