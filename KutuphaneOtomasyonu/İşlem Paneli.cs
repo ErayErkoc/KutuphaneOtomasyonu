@@ -28,11 +28,10 @@ namespace KutuphaneOtomasyonu
             KitapEklebtn.Visible = false;
             KitapDüzenlebn.Visible = false;
             KitapSilbtn.Visible = false;
+
             ÖdünçVerbtn.Visible = false;
             GeriAlbtn.Visible = false;
             Takipbtn.Visible = false;
-            
-
         }
 
         Okuyucu_Liste OkuyucuListeForm;
@@ -56,8 +55,6 @@ namespace KutuphaneOtomasyonu
             }
 
             OkuyucuListeForm.MdiParent = this;
-            
-
         }
 
         Okuyucu_Ekle EkleForm;

@@ -67,7 +67,8 @@ namespace KutuphaneOtomasyonu
             // 
             // KullanıcıGirişBTN
             // 
-            this.KullanıcıGirişBTN.BackColor = System.Drawing.Color.Transparent;
+            this.KullanıcıGirişBTN.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
+            this.KullanıcıGirişBTN.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.KullanıcıGirişBTN.Location = new System.Drawing.Point(145, 196);
             this.KullanıcıGirişBTN.Name = "KullanıcıGirişBTN";
             this.KullanıcıGirişBTN.Size = new System.Drawing.Size(102, 30);
@@ -78,11 +79,10 @@ namespace KutuphaneOtomasyonu
             // 
             // pictureBox1
             // 
-            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(145, 12);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(102, 102);
+            this.pictureBox1.Size = new System.Drawing.Size(100, 100);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
             this.pictureBox1.TabIndex = 6;
             this.pictureBox1.TabStop = false;
@@ -99,7 +99,7 @@ namespace KutuphaneOtomasyonu
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
-            this.BackColor = System.Drawing.Color.DimGray;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(69)))), ((int)(((byte)(217)))), ((int)(((byte)(253)))));
             this.ClientSize = new System.Drawing.Size(337, 270);
             this.Controls.Add(this.KullanıcıAdtxt);
             this.Controls.Add(this.pictureBox1);

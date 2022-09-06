@@ -47,6 +47,7 @@ namespace KutuphaneOtomasyonu.Kitap_İşlem
             // 
             // dataGridView1
             // 
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(29)))), ((int)(((byte)(54)))));
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(12, 229);
             this.dataGridView1.Name = "dataGridView1";
@@ -58,9 +59,9 @@ namespace KutuphaneOtomasyonu.Kitap_İşlem
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(9, 18);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(84, 13);
+            this.label1.Size = new System.Drawing.Size(74, 13);
             this.label1.TabIndex = 1;
-            this.label1.Text = "Okuyucu Kodu :";
+            this.label1.Text = "Okuyucu Adı :";
             // 
             // KodBultxt
             // 
@@ -71,12 +72,13 @@ namespace KutuphaneOtomasyonu.Kitap_İşlem
             // 
             // Arabtn
             // 
+            this.Arabtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(64)))), ((int)(((byte)(90)))));
             this.Arabtn.Location = new System.Drawing.Point(257, 15);
             this.Arabtn.Name = "Arabtn";
             this.Arabtn.Size = new System.Drawing.Size(78, 20);
             this.Arabtn.TabIndex = 3;
             this.Arabtn.Text = "Ara";
-            this.Arabtn.UseVisualStyleBackColor = true;
+            this.Arabtn.UseVisualStyleBackColor = false;
             this.Arabtn.Click += new System.EventHandler(this.Arabtn_Click);
             // 
             // label2
@@ -89,6 +91,7 @@ namespace KutuphaneOtomasyonu.Kitap_İşlem
             // 
             // dataGridView2
             // 
+            this.dataGridView2.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(29)))), ((int)(((byte)(54)))));
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.Location = new System.Drawing.Point(367, 41);
             this.dataGridView2.Name = "dataGridView2";
@@ -114,12 +117,13 @@ namespace KutuphaneOtomasyonu.Kitap_İşlem
             // 
             // VerenArabtn
             // 
+            this.VerenArabtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(64)))), ((int)(((byte)(90)))));
             this.VerenArabtn.Location = new System.Drawing.Point(257, 75);
             this.VerenArabtn.Name = "VerenArabtn";
             this.VerenArabtn.Size = new System.Drawing.Size(78, 20);
             this.VerenArabtn.TabIndex = 9;
             this.VerenArabtn.Text = "Ara";
-            this.VerenArabtn.UseVisualStyleBackColor = true;
+            this.VerenArabtn.UseVisualStyleBackColor = false;
             this.VerenArabtn.Click += new System.EventHandler(this.VerenArabtn_Click);
             // 
             // VerenKodBultxt
@@ -134,18 +138,19 @@ namespace KutuphaneOtomasyonu.Kitap_İşlem
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(9, 78);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(77, 13);
+            this.label4.Size = new System.Drawing.Size(70, 13);
             this.label4.TabIndex = 7;
-            this.label4.Text = "Verenin Kodu :";
+            this.label4.Text = "Kitabı Veren :";
             // 
             // ÖdünçVerbtn
             // 
+            this.ÖdünçVerbtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(64)))), ((int)(((byte)(90)))));
             this.ÖdünçVerbtn.Location = new System.Drawing.Point(93, 162);
             this.ÖdünçVerbtn.Name = "ÖdünçVerbtn";
             this.ÖdünçVerbtn.Size = new System.Drawing.Size(147, 31);
             this.ÖdünçVerbtn.TabIndex = 11;
             this.ÖdünçVerbtn.Text = "ÖDÜNÇ VER";
-            this.ÖdünçVerbtn.UseVisualStyleBackColor = true;
+            this.ÖdünçVerbtn.UseVisualStyleBackColor = false;
             this.ÖdünçVerbtn.Click += new System.EventHandler(this.ÖdünçVerbtn_Click);
             // 
             // Ödünç_Ver

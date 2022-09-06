@@ -160,16 +160,18 @@ namespace KutuphaneOtomasyonu.Kullanıcı
             // 
             // OkuyucuKaydetbtn
             // 
+            this.OkuyucuKaydetbtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(218)))), ((int)(((byte)(255)))));
             this.OkuyucuKaydetbtn.Location = new System.Drawing.Point(68, 202);
             this.OkuyucuKaydetbtn.Name = "OkuyucuKaydetbtn";
             this.OkuyucuKaydetbtn.Size = new System.Drawing.Size(187, 30);
             this.OkuyucuKaydetbtn.TabIndex = 13;
             this.OkuyucuKaydetbtn.Text = "KAYDET";
-            this.OkuyucuKaydetbtn.UseVisualStyleBackColor = true;
+            this.OkuyucuKaydetbtn.UseVisualStyleBackColor = false;
             this.OkuyucuKaydetbtn.Click += new System.EventHandler(this.OkuyucuKaydetbtn_Click);
             // 
             // dataGridView1
             // 
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(223)))), ((int)(((byte)(252)))));
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(268, 12);
             this.dataGridView1.Name = "dataGridView1";

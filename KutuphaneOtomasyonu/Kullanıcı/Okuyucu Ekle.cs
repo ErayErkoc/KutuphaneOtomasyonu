@@ -60,6 +60,7 @@ namespace KutuphaneOtomasyonu.Kullanıcı
 
             db.Okuyucular.Add(okuyucu);
             db.SaveChanges();
+            Listele();
             
         }
 

@@ -15,6 +15,7 @@
           <Property Name="KitapTür" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="KitapYayınevi" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="KitapSayfaSayısı" Type="int" />
+          <Property Name="KitapResim" Type="nvarchar(max)" />
         </EntityType>
         <EntityType Name="Kullanıcılar">
           <Key>
@@ -165,6 +166,7 @@
           <Property Name="KitapYayınevi" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="KitapSayfaSayısı" Type="Int32" />
           <NavigationProperty Name="ÖdünçKitaplar" Relationship="Model.FK_ÖdünçKitaplar_Kaynaklar" FromRole="Kaynaklar" ToRole="ÖdünçKitaplar" />
+          <Property Name="KitapResim" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="Okuyucular">
           <Key>
@@ -264,6 +266,7 @@
           <EntitySetMapping Name="Kaynaklar">
             <EntityTypeMapping TypeName="Model.Kaynaklar">
               <MappingFragment StoreEntitySet="Kaynaklar">
+                <ScalarProperty Name="KitapResim" ColumnName="KitapResim" />
                 <ScalarProperty Name="KitapSayfaSayısı" ColumnName="KitapSayfaSayısı" />
                 <ScalarProperty Name="KitapYayınevi" ColumnName="KitapYayınevi" />
                 <ScalarProperty Name="KitapTür" ColumnName="KitapTür" />

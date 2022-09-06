@@ -36,6 +36,7 @@ namespace KutuphaneOtomasyonu.Kitap_İşlem
             // 
             // dataGridView1
             // 
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(29)))), ((int)(((byte)(54)))));
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(12, 12);
             this.dataGridView1.Name = "dataGridView1";
@@ -44,12 +45,13 @@ namespace KutuphaneOtomasyonu.Kitap_İşlem
             // 
             // İadeEtbtn
             // 
+            this.İadeEtbtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(64)))), ((int)(((byte)(90)))));
             this.İadeEtbtn.Location = new System.Drawing.Point(316, 323);
             this.İadeEtbtn.Name = "İadeEtbtn";
             this.İadeEtbtn.Size = new System.Drawing.Size(154, 56);
             this.İadeEtbtn.TabIndex = 1;
             this.İadeEtbtn.Text = "İADE ET";
-            this.İadeEtbtn.UseVisualStyleBackColor = true;
+            this.İadeEtbtn.UseVisualStyleBackColor = false;
             this.İadeEtbtn.Click += new System.EventHandler(this.İadeEtbtn_Click);
             // 
             // Geri_Al

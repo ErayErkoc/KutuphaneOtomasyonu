@@ -40,6 +40,7 @@ namespace KutuphaneOtomasyonu.Kitap_İşlem
             // 
             // dataGridView1
             // 
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(29)))), ((int)(((byte)(54)))));
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(12, 38);
             this.dataGridView1.Name = "dataGridView1";
@@ -48,12 +49,13 @@ namespace KutuphaneOtomasyonu.Kitap_İşlem
             // 
             // OkuyucuBulbtn
             // 
+            this.OkuyucuBulbtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(223)))), ((int)(((byte)(64)))), ((int)(((byte)(90)))));
             this.OkuyucuBulbtn.Location = new System.Drawing.Point(119, 288);
             this.OkuyucuBulbtn.Name = "OkuyucuBulbtn";
             this.OkuyucuBulbtn.Size = new System.Drawing.Size(168, 30);
             this.OkuyucuBulbtn.TabIndex = 1;
             this.OkuyucuBulbtn.Text = "Okuyucuyu Bul";
-            this.OkuyucuBulbtn.UseVisualStyleBackColor = true;
+            this.OkuyucuBulbtn.UseVisualStyleBackColor = false;
             this.OkuyucuBulbtn.Click += new System.EventHandler(this.OkuyucuBulbtn_Click);
             // 
             // KitapAratxt

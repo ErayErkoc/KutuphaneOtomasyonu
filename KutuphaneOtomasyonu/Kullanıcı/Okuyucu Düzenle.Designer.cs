@@ -49,12 +49,13 @@ namespace KutuphaneOtomasyonu.Kullanıcı
             // 
             // OkuyucuDüzenlebtn
             // 
+            this.OkuyucuDüzenlebtn.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(163)))), ((int)(((byte)(218)))), ((int)(((byte)(255)))));
             this.OkuyucuDüzenlebtn.Location = new System.Drawing.Point(67, 205);
             this.OkuyucuDüzenlebtn.Name = "OkuyucuDüzenlebtn";
             this.OkuyucuDüzenlebtn.Size = new System.Drawing.Size(187, 30);
             this.OkuyucuDüzenlebtn.TabIndex = 27;
             this.OkuyucuDüzenlebtn.Text = "GÜNCELLE";
-            this.OkuyucuDüzenlebtn.UseVisualStyleBackColor = true;
+            this.OkuyucuDüzenlebtn.UseVisualStyleBackColor = false;
             this.OkuyucuDüzenlebtn.Click += new System.EventHandler(this.OkuyucuDüzenlebtn_Click);
             // 
             // radioErkek
@@ -170,6 +171,7 @@ namespace KutuphaneOtomasyonu.Kullanıcı
             // 
             // dataGridView1
             // 
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(223)))), ((int)(((byte)(252)))));
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(260, 15);
             this.dataGridView1.Name = "dataGridView1";

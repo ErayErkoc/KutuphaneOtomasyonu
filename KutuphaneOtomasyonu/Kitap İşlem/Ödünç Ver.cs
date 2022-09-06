@@ -59,11 +59,11 @@ namespace KutuphaneOtomasyonu.Kitap_İşlem
 
         private void Arabtn_Click(object sender, EventArgs e)
         {
-            string ArananKod = KodBultxt.Text;
-            var OkuyucuVarmı = db.Okuyucular.Where(x => x.OkuyucuKod == ArananKod).FirstOrDefault();
+            string ArananAd = KodBultxt.Text;
+            var OkuyucuVarmı = db.Okuyucular.Where(x => x.OkuyucuAd == ArananAd).FirstOrDefault();
             if (OkuyucuVarmı != null)
             {
-                label2.Text = OkuyucuVarmı.OkuyucuAd + " " + OkuyucuVarmı.OkuyucuSoyad;
+                label2.Text = OkuyucuVarmı.OkuyucuAd + " " + OkuyucuVarmı.OkuyucuSoyad+" "+OkuyucuVarmı.OkuyucuKod;
             }
             else
                 label2.Text = (" KULLANICI BULUNAMADI !");
@@ -74,11 +74,11 @@ namespace KutuphaneOtomasyonu.Kitap_İşlem
 
         private void VerenArabtn_Click(object sender, EventArgs e)
         {
-            string ArananKod = VerenKodBultxt.Text;
-            var OkuyucuVarmı = db.Okuyucular.Where(x => x.OkuyucuKod == ArananKod).FirstOrDefault();
+            string ArananAd = VerenKodBultxt.Text;
+            var OkuyucuVarmı = db.Okuyucular.Where(x => x.OkuyucuAd == ArananAd).FirstOrDefault();
             if (OkuyucuVarmı != null)
             {
-                label3.Text = OkuyucuVarmı.OkuyucuAd + " " + OkuyucuVarmı.OkuyucuSoyad;
+                label3.Text = OkuyucuVarmı.OkuyucuAd + " " + OkuyucuVarmı.OkuyucuSoyad + " " + OkuyucuVarmı.OkuyucuKod;
             }
             else
                 label3.Text = (" KULLANICI BULUNAMADI !");
@@ -87,16 +87,18 @@ namespace KutuphaneOtomasyonu.Kitap_İşlem
         private void ÖdünçVerbtn_Click(object sender, EventArgs e)
         {
             // Veritabanından alan ve veren kişileri seçtim
-            string AlanKişiKod = KodBultxt.Text;
-            var AlanKişi = db.Okuyucular.Where(x => x.OkuyucuKod.Equals(AlanKişiKod)).FirstOrDefault();
+            string AlanKişiAd = KodBultxt.Text;
+            var AlanKişi = db.Okuyucular.Where(x => x.OkuyucuAd.Equals(AlanKişiAd)).FirstOrDefault();
 
-            string VerenKişiKod = VerenKodBultxt.Text;
-            var VerenKişi = db.Okuyucular.Where(x => x.OkuyucuKod.Equals(VerenKişiKod)).FirstOrDefault();
+            string VerenKişiAd = VerenKodBultxt.Text;
+            var VerenKişi = db.Okuyucular.Where(x => x.OkuyucuAd.Equals(VerenKişiAd)).FirstOrDefault();
 
             // Veritabanından Kitabı seçtim
 
             int SeçilenKitapId = Convert.ToInt32(dataGridView2.CurrentRow.Cells[0].Value);
             var SeçilenKitap = db.Kaynaklar.Where(x => x.KitapId == SeçilenKitapId).FirstOrDefault();
+
+            // koşul ile seçilen id nin kullanıcı ismi gözüksün
 
             ÖdünçKitaplar Ödünç = new ÖdünçKitaplar();
             Ödünç.KitapId = SeçilenKitap.KitapId;

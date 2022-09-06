@@ -46,7 +46,7 @@ namespace KutuphaneOtomasyonu.Kullanıcı
         {
             DialogResult SilinsinMi = MessageBox.Show("Okuyucu Silinecek, Onaylıyor musun?","Okuyucu Sil",MessageBoxButtons.YesNo);
 
-            while (SilinsinMi == DialogResult.Yes)
+            if (SilinsinMi == DialogResult.Yes)
             {
                 int SeçilenId = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value);
                 var okuyucu = db.Okuyucular.Where(x => x.OkuyucuId == SeçilenId).FirstOrDefault();
@@ -54,6 +54,10 @@ namespace KutuphaneOtomasyonu.Kullanıcı
                 db.SaveChanges();
                 Listele();
                 MessageBox.Show("OKUYUCU SİLİNDİ");
+            }
+            else
+            {
+                MessageBox.Show("Silme İşlemi İptal Edildi");
             }
 
         }

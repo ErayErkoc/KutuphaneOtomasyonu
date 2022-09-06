@@ -26,6 +26,7 @@ namespace KutuphaneOtomasyonu
         public string KitapTür { get; set; }
         public string KitapYayınevi { get; set; }
         public Nullable<int> KitapSayfaSayısı { get; set; }
+        public string KitapResim { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<ÖdünçKitaplar> ÖdünçKitaplar { get; set; }
